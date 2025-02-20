@@ -6,11 +6,11 @@
   <title>Twitter neko</title>
   <script>
     function updateReplyLink() {
+      var suzi=Math.floor(Math.random() * 1000);
       var tweetId = document.getElementById("tweetId").value;
-      
       var replyText = document.getElementById("replyText").value;
       var replyLink = document.getElementById("replyLink");
-      replyLink.href = "https://twitter.com/intent/tweet?in_reply_to=" + tweetId + "&text=" + encodeURIComponent(replyText)+Math.floor(Math.random() * 1000);;
+      replyLink.href = "https://twitter.com/intent/tweet?in_reply_to=" + tweetId + "&text=" + encodeURIComponent(replyText)+suzi;
     }
   </script>
 </head>
