@@ -7,7 +7,7 @@
   <script>
 
     function updateReplyLink() {
-      var suzi = Math.floor(Math.random() * 1000); 
+      var suzi = Math.random().toString(32).substring(2); 
       var tweetId = document.getElementById("tweetId").value;
       var replyText = document.getElementById("replyText").value;
       var replyLink = document.getElementById("replyLink");
