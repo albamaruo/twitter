@@ -4,19 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Twitter neko</title>
-  <script>
 
-    function updateReplyLink() {
-      var suzi = Math.random().toString(32).substring(2); 
-      var tweetId = document.getElementById("tweetId").value;
-      var replyText = document.getElementById("replyText").value;
-      var replyLink = document.getElementById("replyLink");
-      replyLink.href = "https://twitter.com/intent/tweet?in_reply_to=" + tweetId + "&text=" + encodeURIComponent(replyText) + suzi+"";
-    }
-
-   
-    setInterval(updateReplyLink, 100); 
-  </script>
 </head>
 <body>
   <style>
@@ -31,7 +19,7 @@
   </style>
 
 <div class="p-8 rounded border border-gray-200">
-    <h1 class="bg-[url('https://cdn131.picsart.com/331593654024201.jpg')] bg-cover bg-center text-white p-8 font-bold text-shadowfont-bold">Twitter猫</h1>
+    <h1 class="bg-[url('https://photo.16pic.com/00/89/08/16pic_8908710_b.jpg')] bg-cover bg-center text-center text-BLACK p-8 font-bold text-shadowfont-bold">Twitter😻</h1>
 
   <form>
     <div class="mt-8 space-y-6">
@@ -47,19 +35,61 @@
     </div>
     <div class="space-x-4 mt-8">
       <a id="replyLink" href="#" target="_blank" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50">FIRE</a>
-    </div>
+      
+    
   </form>
-
-  <div id="toast-warning" class="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800" role="alert">
-    <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z"/>
-        </svg>
-        <span class="sr-only">Warning icon</span>
-    </div>
-    <div class="ms-3 text-sm font-normal">ツイートIDはツイートを共有して数字の部分をすべてコピーすればOK　例：https://x.com/xxxxx/status/<font color="red">1892394733336400015</font>この場合赤い部分をコピー</div>
-  </div>
+  <a id="replyLin" href="#"  class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50">FIRE x 50 (for pc)</a>
 </div>
 
 </body>
+<div id="toast-success"
+  class="flex items-center w-full p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+  role="alert">
+        <div
+            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 20 20">
+                <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+            </svg>
+            <span class="sr-only">Check icon</span>
+        </div>
+        <div class="ml-3 text-sm font-normal ">ツイートIDはツイートを共有して数字の部分をすべてコピーすればOK　例：https://x.com/xxxxx/status/<font color="red">1892394733336400015</font>この場合赤い部分をコピー</div>
+    </button>
+    </div>
+  </div>
+</div>
+<script>
+
+  function updateReplyLink() {
+    var suzi = Math.random().toString(32).substring(2); 
+    var tweetId = document.getElementById("tweetId").value;
+    var replyText = document.getElementById("replyText").value;
+    var replyLink = document.getElementById("replyLink");
+    replyLink.href = "https://twitter.com/intent/tweet?in_reply_to=" + tweetId + "&text=" + encodeURIComponent(replyText) + suzi+"";
+  }
+  setInterval(updateReplyLink, 10); 
+</script>
+<script>
+  document.getElementById("replyLin").addEventListener("click", function(event) {
+    event.preventDefault(); 
+  
+    let count = 0;
+  
+    const intervalId = setInterval(function() {
+      const suzi = Math.random().toString(32).substring(2); 
+      const tweetId = document.getElementById("tweetId").value;
+      const replyText = document.getElementById("replyText").value;
+      const targetUrl = "https://twitter.com/intent/tweet?in_reply_to=" + tweetId + "&text=" + encodeURIComponent(replyText) + suzi;
+  
+      window.open(targetUrl, '_blank'); 
+  
+      count++;
+      if (count >= 50) {
+        clearInterval(intervalId);
+      }
+    }, 100); 
+  });
+  </script>
+  
 </html>
