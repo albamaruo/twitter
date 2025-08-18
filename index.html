@@ -81,7 +81,7 @@
       const suzi = Math.random().toString(32).substring(2); 
       const tweetId = document.getElementById("tweetId").value;
       const replyText = document.getElementById("replyText").value;
-      const targetUrl = "https://twitter.com/intent/tweet?in_reply_to=" + tweetId + "&text=" + encodeURIComponent(replyText) + suzi;
+      const targetUrl = "https://twitter.com/intent/tweet?in_reply_to=" + tweetId + "&text=" + encodeURIComponent(replyText) +" "+suzi+" ";
   
       window.open(targetUrl, '_blank'); 
   
